@@ -1,4 +1,4 @@
-# KBTU-Django-Backend-final-project
+# KBTU-Djangщ-final-project
 
 # Final project intrustions
 
@@ -7,7 +7,7 @@
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/Limkaa/KBTU-Django-Backend-Course.git
+$ git clone https://github.com/Limkaa/KBTU-Django-final-project.git
 $ cd KBTU-Django-final-project
 ```
 

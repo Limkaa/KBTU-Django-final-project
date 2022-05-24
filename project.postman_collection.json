@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "c6f89730-b884-4278-ba16-cb7f64074048",
+		"name": "Final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "View profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/profile/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								""
+							]
+						},
+						"description": "View profile of current user"
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Monica",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Lerman",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "I am a designer in huge fashion company!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/profile/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"profile",
+								""
+							]
+						},
+						"description": "Update profile of current user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "All books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/books/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						},
+						"description": "All lessons of specific course"
+					},
+					"response": []
+				},
+				{
+					"name": "Book details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/books/1/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Book 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "With description",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "num_pages",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Drama",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Book 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Another description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "num_pages",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Classic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/2/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"2",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/books/4/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"books",
+								"4",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{access-token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Journals",
+			"item": [
+				{
+					"name": "All journals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/journals/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"journals",
+								""
+							]
+						},
+						"description": "All lessons of specific course"
+					},
+					"response": []
+				},
+				{
+					"name": "Journal details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/journals/2/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"journals",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create journal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daily news",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "With description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "publisher",
+									"value": "Books Print Corp",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/journals/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"journals",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				},
+				{
+					"name": "Update journal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daily news journal",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "With description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "publisher",
+									"value": "Books Print Corp",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/journals/2/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"journals",
+								"2",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete journal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/journals/2/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"journals",
+								"2",
+								""
+							]
+						},
+						"description": "Only course teacher have access to that action"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{access-token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)",
+							"postman.setEnvironmentVariable('access-token', jsonData.access)",
+							"postman.setEnvironmentVariable('refresh-token', jsonData.refresh)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auth/login/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)",
+							"postman.setEnvironmentVariable('access-token', jsonData.access)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "{{refresh-token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auth/refresh/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auth/verify/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"verify",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"user1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/register/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}

@@ -1,4 +1,4 @@
-# KBTU-Djangщ-final-project
+# KBTU-Django-final-project
 
 # Final project intrustions
 

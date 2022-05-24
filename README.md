@@ -27,7 +27,7 @@ password: admin
 
 ### Let's make easier testing API
 
-For that purpose project root directory has `courses_platform.postman_collection.json`.
+For that purpose project root directory has `project.postman_collection.json`.
 It is a file with all necessary API methods and other settings, which can be imported to your Postman. Just you for that 'import' option in Postman menu. After you successfully did this, we can go to next and final step!
 
 ### Let's run project
